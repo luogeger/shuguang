@@ -1,18 +1,25 @@
 <template>
-    <router-link class="item" to='/checkoutDetail'>
-        <div class="item-left">
-            <p>上海曙光医院</p>
-            <p>血液</p>
-        </div>
-        <div class="item-right">
-            <p>2018-02-17</p>
-            <p>分子生物学检查</p>
-        </div>
-    </router-link>
+    <div>
+        <router-link class="item" to='/checkoutDetail' v-for="(item,index) in checkList" :key='index'>
+            <div class="item-left">
+                <p>{{item.name}}</p>
+                <p>{{item.place}}</p>
+            </div>
+            <div class="item-right">
+                <p>{{item.time}}</p>
+                <p>{{item.skill}}</p>
+            </div>
+        </router-link>
+    </div>
 </template>
 <script>
     export default {
-        
+       props:{
+           checkList:{
+               type:Array,
+               required:true
+           }
+       } 
     }
 </script>
 <style scoped lang='less'>

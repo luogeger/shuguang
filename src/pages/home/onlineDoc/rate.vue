@@ -1,7 +1,6 @@
 <template>
   <div class="yan">
-        <img src="../../assets/pic/doc-info.png" alt="">
-        <x-button type="primary" @click.native="nextPage">免费问诊</x-button>
+        <!-- <img src="../../assets/pic/rate-doc.png" alt=""> -->
   </div>
 </template>
 <script>
@@ -12,7 +11,7 @@ export default {
     },
     methods:{
         nextPage(){
-           this.$router.push('/chat') 
+           this.$router.push('/rate') 
         }
     }
 }

@@ -1,16 +1,21 @@
 <template>
     <div class='my-info'>
-        <div class="head">
-            <div class='head-portrait'>
-                <img :src="url">
-                <p>王二狗</p>
+        <div class='self-info'>
+            <div class="head">
+                <div class='head-portrait'>
+                    <img :src="url">
+                    <p>王二狗</p>
+                </div>
             </div>
+            <group :gutter='10'>
+                <!-- <cell :title="item.name" is-link :link='item.link' v-for='(item,index) in list' :key='index'>
+                    <img slot="icon" width="25" style="display:block;margin-right:15px;" :src="item.src">
+                </cell> -->
+                <cell :title="item.name" is-link :link='item.link' v-for='(item,index) in items' :key='index'>
+                    <img slot="icon" width="25" style="display:block;margin-right:15px;" :src="item.src">
+                </cell>
+            </group>
         </div>
-        <group :gutter='10'>
-            <cell :title="item.name" is-link :link='item.link' v-for='(item,index) in list' :key='index'>
-                <img slot="icon" width="25" style="display:block;margin-right:15px;" :src="item.src">
-            </cell>
-        </group>
     </div>  
 </template>
 <script>
@@ -36,9 +41,42 @@
                 },{
                     name:'个人信息',
                     link:'/self',
+                    src:require('../../assets/imgs/ys_lsjd.png')    
+                }],
+
+                items:[{
+                    name:'在线状态',
+                    link:'/record',
+                    src:require('../../assets/imgs/hz_zxjl.png')
+                },{
+                    name:'设置委托医生',
+                    link:'/record',
+                    src:require('../../assets/imgs/ys_gly_szwtys.png')
+                },{
+                    name:'预约安排',
+                    link:'/record',
+                    src:require('../../assets/imgs/hz_wdyy.png')
+                },{
+                    name:'历史解答',
+                    link:'/record',
                     src:require('../../assets/imgs/ys_lsjd.png')
+                },{
+                    name:'我的患者',
+                    link:'/record',
+                    src:require('../../assets/imgs/ys_wdhz.png')
+                },{
+                    name:'个人资料',
+                    link:'/record',
+                    src:require('../../assets/imgs/ys_grzl.png')
+                },{
+                    name:'管理下属医生',
+                    link:'/record',
+                    src:require('../../assets/imgs/ys_gly_glxsys.png')
                 }]
             }
+        },
+        created(){
+            this.$refresh('我的');
         },
         methods:{
 
@@ -49,8 +87,13 @@
     @import '../../assets/style/public.less';
     
     .my-info{
+        overflow-y:auto;
         height:100vh;
         background-color: #fff;
+        .self-info{
+            height:100%;
+            margin-bottom:25%;
+        }
         .weui-cell:before{
             border:none;
         }

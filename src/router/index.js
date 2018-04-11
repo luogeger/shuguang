@@ -20,14 +20,14 @@ const checkoutDetail = r => require.ensure([], () =>r(require('../pages/home/che
 const drugList = r => require.ensure([], () =>r(require('../pages/home/checkHealth/drugList'), 'drugList'));
 
 
-const quickIssue = r => require.ensure([], () =>r(require('../pages/home/quickIssue'), 'quickIssue'));
+const quickIssue = r => require.ensure([], () =>r(require('../pages/home/quickIssue/quickIssue'), 'quickIssue'));
 
 // 在线医生
 const inquiry = r => require.ensure([], () =>r(require('../pages/home/onlineDoc/inquiry'), 'inquiry'));
-const doc = r => require.ensure([], () =>r(require('../pages/home/doc'), 'doc'));
-const chat = r => require.ensure([], () =>r(require('../pages/home/chat'), 'chat'));
-const rate = r => require.ensure([], () =>r(require('../pages/home/rate'), 'rate'));
-const chatover = r => require.ensure([], () =>r(require('../pages/home/chatover'), 'chatover'));
+const doc = r => require.ensure([], () =>r(require('../pages/home/onlineDoc/doc'), 'doc'));
+const chat = r => require.ensure([], () =>r(require('../pages/home/onlineDoc/chat'), 'chat'));
+const rate = r => require.ensure([], () =>r(require('../pages/home/onlineDoc/rate'), 'rate'));
+const chatover = r => require.ensure([], () =>r(require('../pages/home/onlineDoc/chatover'), 'chatover'));
 
 
 const record = r => require.ensure([], () =>r(require('../pages/my/record'), 'record'));

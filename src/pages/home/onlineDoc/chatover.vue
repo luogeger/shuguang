@@ -1,6 +1,6 @@
 <template>
   <div class="yan">
-        <img src="../../assets/pic/rate-doc.png" alt="">
+        <!-- <img src="../../assets/pic/chat-over.png" alt="" @click="nextPage"> -->
   </div>
 </template>
 <script>
@@ -11,7 +11,7 @@ export default {
     },
     methods:{
         nextPage(){
-           this.$router.push('/rate') 
+           this.$router.push('/rate'); 
         }
     }
 }

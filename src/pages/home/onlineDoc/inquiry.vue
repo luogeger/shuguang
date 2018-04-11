@@ -85,8 +85,21 @@
 </template>
 <script>
   import { Search, Group, Cell, Flexbox, FlexboxItem, Panel, XButton, CellBox } from 'vux';
-  import docInfo from '../../../components/docInfo'
+  import docInfo from '../../../components/docInfo';
   export default {
+      name:'inquiry',
+      data () {
+        return {
+          results: [],
+          value: '',
+          showContent001:false,
+          showContent002:false,
+          showContent003:false
+        }
+      },
+      created(){
+        this.$refresh('在线医生');
+      },
       components: {
         Search,
         Group,
@@ -139,15 +152,7 @@
 
           }
         },
-      data () {
-        return {
-          results: [],
-          value: '',
-          showContent001:false,
-          showContent002:false,
-          showContent003:false,
-        }
-      }
+
 }
 
 function getResult (val) {
