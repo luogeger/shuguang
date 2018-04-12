@@ -2,11 +2,11 @@
     <div class="health">
         <card>
             <div slot="content" class="card-demo-flex card-demo-content01">
-                <router-link class="vux-1px-r" to='/'>
+                <router-link class="vux-1px-r" to='/health'>
                     <img src="../../../assets/imgs/mzjl.png" alt="icon">
                     <span>门诊记录</span>
                 </router-link>
-                <router-link class="vux-1px-r" to='/'>
+                <router-link class="vux-1px-r" to='/health'>
                     <img src="../../../assets/imgs/zyjl.png" alt="icon">
                     <span>住院记录</span>
                 </router-link>

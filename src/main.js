@@ -5,7 +5,11 @@ import FastClick from 'fastclick'
 import router from './router'
 import App from './App'
 
-import '@/components/global.js'
+import '@/components/global.js';
+import { refresh } from './assets/script/public';
+
+Vue.prototype.$refresh = refresh;
+
 
 
 FastClick.attach(document.body)

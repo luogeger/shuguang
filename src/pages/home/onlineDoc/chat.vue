@@ -8,7 +8,7 @@
                 <router-link to='/chatover' class="flex-demo">结束问诊</router-link>
             </flexbox-item>
         </flexbox>
-      <img src="../../assets/pic/chat.png" alt="" @click="nextPage">
+      <!-- <img src="../../assets/pic/chat.png" alt="" @click="nextPage"> -->
   </div>
 </template>
 <script>

@@ -1,7 +1,7 @@
 <template>
     <div class="quick-issue">
         <group :gutter='0'>
-            <x-textarea :placeholder='tips' v-model="issueValue" :max='200' :height='300'></x-textarea>
+            <x-textarea :placeholder='tips' v-model="issueValue" :max='200' :height='200'></x-textarea>
         </group>
         <upload-img></upload-img>
         <box gap="20px 10px">
@@ -19,6 +19,9 @@
                 tips:'请详细描述您的症状、疾病、和身体状况等，至少10个字 以便于医生更准确的分析，我们会确保您的隐私安全。',
             }
         },
+        created(){
+            this.$refresh('极速问诊');
+        },
         components: {
             Group,
             XTextarea,
@@ -34,6 +37,7 @@
 </script>
 <style lang="less" scoped>
     .quick-issue{
-        
+        width:100%;
+        overflow-x:hidden;
     }
 </style>
