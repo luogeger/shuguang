@@ -4,9 +4,16 @@ import Router from 'vue-router'
 
 const index = r => require.ensure([], () => r(require('../pages/index')), 'index');
 const home = r => require.ensure([], () => r(require('../pages/home/home'), 'home'));
+
+// 我的
 const my = r => require.ensure([], () => r(require('../pages/my/my'), 'my'));
 const self = r => require.ensure([], () =>r(require('../pages/my/self'), 'self'));
+const myDoc = r => require.ensure([], () =>r(require('../pages/my/myDoc'), 'myDoc'));
+const loginDocInfo = r => require.ensure([], () =>r(require('../pages/my/loginDocInfo'), 'loginDocInfo'));
+const writeInfo = r => require.ensure([], () =>r(require('../pages/my/writeInfo'), 'writeInfo'));
+const trustDoc = r => require.ensure([], () =>r(require('../pages/my/trustDoc'), 'trustDoc'));
 
+// 登陆注册
 const login = r => require.ensure([], () => r(require('../pages/login/login.vue')), 'login');
 const forgotPassword = r => require.ensure([], () =>r(require('../pages/login/forgotPassword'), 'forgotPassword'));
 const register = r => require.ensure([], () =>r(require('../pages/login/register'), 'register'));
@@ -19,7 +26,7 @@ const checkout = r => require.ensure([], () =>r(require('../pages/home/checkHeal
 const checkoutDetail = r => require.ensure([], () =>r(require('../pages/home/checkHealth/checkoutDetail'), 'checkoutDetail'));
 const drugList = r => require.ensure([], () =>r(require('../pages/home/checkHealth/drugList'), 'drugList'));
 
-
+// 急速问诊
 const quickIssue = r => require.ensure([], () =>r(require('../pages/home/quickIssue/quickIssue'), 'quickIssue'));
 
 // 在线医生
@@ -46,7 +53,7 @@ const routes =  [{
         component:home
     },{
         path:'my',
-        component:my 
+        component:my
     }]
 },{
     path:'/login',
@@ -55,14 +62,26 @@ const routes =  [{
     path:'/register',
     component: register
 },{
+    path:'/forgotPassword',
+    component: forgotPassword
+},{
     path:'/self',
     component: self
 },{
+    path:'/myDoc',
+    component: myDoc
+},{
+    path:'/loginDocInfo',
+    component: loginDocInfo
+},{
+    path:'/writeInfo',
+    component: writeInfo
+},{
+    path:'/trustDoc',
+    component: trustDoc
+},{
     path:'/inquiry',
     component: inquiry
-},{
-    path:'/forgotPassword',
-    component: forgotPassword
 },{
     path:'/health',
     component: health

@@ -11,21 +11,34 @@
                 <!-- <cell :title="item.name" is-link :link='item.link' v-for='(item,index) in list' :key='index'>
                     <img slot="icon" width="25" style="display:block;margin-right:15px;" :src="item.src">
                 </cell> -->
-                <cell :title="item.name" is-link :link='item.link' v-for='(item,index) in items' :key='index'>
+                <cell :title="item.name" 
+                    is-link 
+                    :link='item.link' 
+                    v-for='(item,index) in items' 
+                    :key='index' 
+                    @click.native='selectType(index)'
+                    :value="!index?onLineType:''">
+
                     <img slot="icon" width="25" style="display:block;margin-right:15px;" :src="item.src">
+                    <!-- <div> -->
+                        <!-- <span></span> -->
+                        <!-- <img src="../../assets/imgs/ys_zxzt_0.png" alt="在线标识"> -->
+                    <!-- </div> -->
                 </cell>
             </group>
         </div>
+        <actionsheet v-model="show" :menus="menus" @on-click-menu="handleClick" show-cancel></actionsheet>
     </div>  
 </template>
 <script>
-    import { Blur, Cell, Box, Group} from 'vux'
+    import { Blur, Cell, Box, Group, Actionsheet } from 'vux'
     export default {
         components: {
             Blur,
             Cell,
             Box,
-            Group
+            Group,
+            Actionsheet
         },
         data(){
             return {
@@ -46,11 +59,11 @@
 
                 items:[{
                     name:'在线状态',
-                    link:'/record',
+                    link:'/my',
                     src:require('../../assets/imgs/hz_zxjl.png')
                 },{
                     name:'设置委托医生',
-                    link:'/record',
+                    link:'/trustDoc',
                     src:require('../../assets/imgs/ys_gly_szwtys.png')
                 },{
                     name:'预约安排',
@@ -66,12 +79,26 @@
                     src:require('../../assets/imgs/ys_wdhz.png')
                 },{
                     name:'个人资料',
-                    link:'/record',
+                    link:'/self',
                     src:require('../../assets/imgs/ys_grzl.png')
                 },{
                     name:'管理下属医生',
-                    link:'/record',
+                    link:'/myDoc',
                     src:require('../../assets/imgs/ys_gly_glxsys.png')
+                }],
+
+                show:false,
+                onLineType:'委托中',
+                // imgSrc:require('../../assets/imgs/ys_gly_gou.png'),
+                menus:[{
+                    label:'在线',
+                    type: 'Default'
+                },{
+                    label:"<span style='padding-left:20px;'>委托中&nbsp;&nbsp;<span :class='isChecked>√</span></span>",
+                    type: 'primary'
+                },{
+                    label:'离线',
+                    type: 'Default'
                 }]
             }
         },
@@ -79,7 +106,16 @@
             this.$refresh('我的');
         },
         methods:{
-
+            selectType(i){
+                this.show = !i;
+            },
+            handleClick(key,item){
+                this.onLineType = item.label.indexOf('委托中') > -1 ? '委托中' : item.label;
+                const temp = item;
+                this.menus.forEach(item => {
+                    item.type = item.label === temp.label? 'primary': 'Default';
+                })
+            }
         }
     }
 </script>
