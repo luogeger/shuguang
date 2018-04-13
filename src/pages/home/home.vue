@@ -1,15 +1,18 @@
 <template>
   <div>
-    <first-page></first-page>
+    <!-- <suffer></suffer>  -->
+    <doc></doc>
     <record></record>
   </div>
 </template>
 <script>
-    import firstPage from '../../components/main';
-    import record from '../../components/record'
+    import suffer from '../../components/suffer';
+    import doc from '../../components/doc';
+    import record from '../../components/record';
     export default {
         components:{
-            firstPage,
+            suffer,
+            doc,
             record
         }
     }
