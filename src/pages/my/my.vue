@@ -4,7 +4,8 @@
             <div class="head">
                 <div class='head-portrait'>
                     <img :src="url">
-                    <p>王二狗</p>
+                    <p>王二狗 <span>管理员</span></p>
+                    <p>上海曙光医院 骨与软组织</p>
                 </div>
             </div>
             <group :gutter='10'>
@@ -67,15 +68,15 @@
                     src:require('../../assets/imgs/ys_gly_szwtys.png')
                 },{
                     name:'预约安排',
-                    link:'/record',
+                    link:'/myBooking',
                     src:require('../../assets/imgs/hz_wdyy.png')
                 },{
                     name:'历史解答',
-                    link:'/record',
+                    link:'/historyAnswer',
                     src:require('../../assets/imgs/ys_lsjd.png')
                 },{
                     name:'我的患者',
-                    link:'/record',
+                    link:'/mySufferer',
                     src:require('../../assets/imgs/ys_wdhz.png')
                 },{
                     name:'个人资料',
@@ -128,7 +129,7 @@
         background-color: #fff;
         .self-info{
             height:100%;
-            margin-bottom:25%;
+            margin-bottom:35%;
         }
         .weui-cell:before{
             border:none;
@@ -142,11 +143,11 @@
     }
     .head{
         background:#FFA600;
-        height:30%;
+        // height:30%;
         text-align: center;
         box-shadow:0 2px 10px 0 #DC8F00;
         .head-portrait{
-            padding-top:3rem;
+            padding:3rem 0 2rem 0;
             width:100%;
             img {
                 width: 8rem;
@@ -156,6 +157,19 @@
             p {
                 .fontStyle(2rem, #fff, 1);
                 padding-top:1rem;
+                span {
+                    background-color: #fff;
+                    .fontStyle(1.2rem, #FFA600, 1);
+                    border-radius:.4rem;
+                    padding:.2rem;
+                    vertical-align:middle;
+                }
+                &:nth-child(2){
+                    padding-left: 10%;
+                }
+                &:nth-child(3){
+                    .fontStyle(1.4rem, #fff, 1);   
+                }
             }
         }
 

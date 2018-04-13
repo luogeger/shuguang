@@ -32,7 +32,6 @@
 </script>
 <style lang="less" scoped>
     @import '../../assets/style/public.less';
-    @import '../../assets/style/public.less';
 
     .add-doc{
         display: block;
